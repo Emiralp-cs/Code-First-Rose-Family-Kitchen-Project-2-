@@ -53,5 +53,10 @@ CRUD management of all restaurant content:
 Also:
 * Bookings: Admin can approve/reject reservation requests.
 * Messages: Admin can mark messages as read/unread.
-![oldu galiba](https://github.com/user-attachments/assets/797cb727-8319-41b4-9243-565c75bdfac5)
+
+##__Photos of the project__
+![deneme2](https://github.com/user-attachments/assets/0b23c258-b9d6-49ca-a891-59272d324e09)
+
+
+
 
