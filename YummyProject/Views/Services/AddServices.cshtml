@@ -1,0 +1,39 @@
+﻿@model YummyProject.Models.Service
+
+@{
+    ViewBag.Title = "AddServices";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2 style="text-align:center">Add Services</h2>
+
+<hr />
+
+<form method="post" enctype="multipart/form-data">
+
+    <label>Upload Image</label>
+    <br />
+    <input type="file" name="ImageFile" required />
+
+    <br />
+
+    <label>Title</label>
+    <br />
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+
+    <br />
+
+    <label>Description</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+
+    <br />
+
+    <div style="text-align:center">
+        <button class="btn btn-outline-info">Add</button>
+    </div>
+    <br />
+
+
+</form>
+
+

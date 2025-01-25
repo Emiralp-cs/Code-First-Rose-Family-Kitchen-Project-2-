@@ -1,0 +1,45 @@
+﻿@model YummyProject.Models.Feature
+
+
+@{
+    ViewBag.Title = "AddFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<br />
+<h3 style="text-align:center">Add New Featured Area Page</h3>
+<hr />
+<form method="post" enctype="multipart/form-data">
+    <label>Upload Image</label>
+    <input type="file" name="ImageFile" />
+    <br />
+    <hr />
+
+    <br />
+
+    <label>Title</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <div class="text-danger">@Html.ValidationMessageFor(x => x.Title)</div>
+
+    <br />
+
+    <label>Description</label>
+    @Html.TextAreaFor(x => x.Description, 5, 1, new { @class = "form-control" })
+    <div class="text-danger">@Html.ValidationMessageFor(x => x.Description)</div>
+
+
+    <br />
+
+    <label>Video Url</label>
+    @Html.TextBoxFor(x => x.VideoUrl, new { @class = "form-control" })
+    <div class="text-danger">@Html.ValidationMessageFor(x => x.VideoUrl)</div>
+
+    <br />
+
+    <div class="text-danger">@Html.ViewBag.error</div>
+
+    <div style="text-align:center">
+        <button class="btn btn-outline-primary">Add</button>
+    </div>
+
+    <br />
+</form>

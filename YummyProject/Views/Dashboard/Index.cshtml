@@ -1,0 +1,76 @@
+﻿@model List<YummyProject.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h3 style="text-align:center" class="mt-4">Dashboard Page</h3>
+<hr />
+<ol class="breadcrumb mb-4">
+</ol>
+<div class="row">
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-primary text-white mb-4">
+            <div class="card-body">Number of product types</div>
+            <span class="card-body display-6"><strong>@ViewBag.SoupCount</strong></span>
+
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-warning text-white mb-4">
+            <div class="card-body">Most Expensive Product</div>
+            <span class="card-body display-6"><strong>@ViewBag.MostExpensive</strong></span>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-danger text-white mb-4">
+            <div class="card-body">Least Expensive Product</div>
+            <span class="card-body display-6"><strong>@ViewBag.CheapestPrice</strong></span>
+
+
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-success text-white mb-4">
+            <div class="card-body">Average product price</div>
+            <span class="card-body display-6"><strong>@ViewBag.AvgPrice.ToString("00.00") ₺</strong></span>
+        </div>
+    </div>
+
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        All of our products
+    </div>
+
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Ingredients</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody> 
+               @foreach (var item in Model)
+               {
+                   <tr>
+                       <td>@item.ProductName</td>
+                       <td>@item.Ingredients</td>
+                       <td>@item.Price</td>
+                       <td>@item.Category.CategoryName</td>
+                   </tr>
+               }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

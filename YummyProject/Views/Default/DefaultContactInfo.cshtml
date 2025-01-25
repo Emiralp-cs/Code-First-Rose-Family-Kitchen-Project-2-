@@ -1,0 +1,69 @@
+﻿@model List<YummyProject.Models.ConInfo>
+
+<section id="contact" class="contact section">
+    @foreach (var item in Model)
+    {
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>CONTACT</h2>
+            <p><span>NEED HELP ?</span> <span class="description-title">CONTACT US</span></p>
+        </div><!-- End Section Title -->
+
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="mb-5">
+        <iframe allowfullscreen="" frameborder="0" style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d24960.573121185447!2d27.2129638!3d38.5551632!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2str!4v1737744667180!5m2!1sen!2str"></iframe>
+    </div><!-- End Google Maps -->
+
+
+    
+    <div class="row gy-4">
+
+        <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
+                <i class="icon bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                    <h3>Adress</h3>
+                    <p>@item.Address</p>
+                </div>
+            </div>
+        </div><!-- End Info Item -->
+
+        <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
+                <i class="icon bi bi-telephone flex-shrink-0"></i>
+                <div>
+                    <h3>Call Us</h3>
+                    <p>@item.PhoneNumber</p>
+                </div>
+            </div>
+        </div><!-- End Info Item -->
+
+        <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+                <i class="icon bi bi-envelope flex-shrink-0"></i>
+                <div>
+                    <h3>Email</h3>
+                    <p>@item.Email</p>
+                </div>
+            </div>
+        </div><!-- End Info Item -->
+
+        <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
+                <i class="icon bi bi-clock flex-shrink-0"></i>
+                <div>
+                    <h3>Opening Hours<br></h3>
+                    <p>@item.OpeningHours</p>
+                </div>
+            </div>
+        </div><!-- End Info Item -->
+
+    </div>
+
+
+</div>
+    }
+
+
+</section>

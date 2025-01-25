@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+<!-- Feature Section -->
+@Html.Action("DefaultFeature")
+<!-- /Feature Section -->
+<!-- About Section -->
+@Html.Action("DefaultAbout")
+<!-- /About Section -->
+<!-- Service Section -->
+@Html.Action("DefaultServices")
+<!-- /Service Section -->
+<!-- Stats Section -->
+<section id="stats" class="stats section dark-background">
+
+    <img src="~/Templates/yummy-red-1.0.0/assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        @Html.Action("DefaultStats")
+
+    </div>
+
+</section><!-- /Stats Section -->
+<!-- Product Section -->
+@Html.Action("DefaultProduct")
+<!-- /Product Section -->
+<!-- Testimonials Section -->
+@Html.Action("DefaultTestimonials")
+<!-- /Testimonials Section -->
+<!-- Events Section -->
+@Html.Action("DefaultEvents")
+<!-- /Events Section -->
+<!-- Chefs Section -->
+@Html.Action("DefaultChefs")
+<!-- /Chefs Section -->
+<!-- Booking Section -->
+@Html.Action("DefaultBookings")
+<!-- /Booking Section -->
+<!-- Photo Gallery Section -->
+@Html.Action("DefaultPhotoGallery")
+<!-- /Photo Gallery Section -->
+<!-- Contact Section -->
+@Html.Action("DefaultContactInfo")<!-- /Contact Section -->
+<!-- Message Form -->
+<br />
+@Html.Action("DefaultMessages")
+<!-- End Message Form -->

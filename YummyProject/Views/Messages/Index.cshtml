@@ -1,0 +1,85 @@
+﻿@model List<YummyProject.Models.Message>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<br />
+<h3 style="text-align:center">Messages Page</h3>
+<hr />
+<br />
+<h4>Unread Messages</h4>
+<br />
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Read Status</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var item in Model.Where(x => x.Isread == false).ToList())
+    {
+        <tr>
+            <td><a class="btn btn-outline-@(item.Isread == false ? "danger":"success")">@(item.Isread == false ? "Unread":"Read")</a></td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Subject</td>
+            <td>@item.MessageContent</td>
+            <td><a class="btn btn-outline-danger" href="/Messages/DeleteMessage/@item.MessageId">Delete</a></td>
+            <td><a class="btn btn-outline-info" href="/Messages/UpdateMessage/@item.MessageId">Update</a></td>
+            <td><a href="/Messages/Isread/@item.MessageId" class="btn btn-outline-@(item.Isread == false ? "danger":"success")">@(item.Isread == false ? "Mark as read ?" : "Mark as unread ?")</a></td>
+
+
+        </tr>
+
+
+    }
+
+
+</table>
+<br />
+<hr />
+
+<br />
+<h4>Read Messages</h4>
+<br />
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Read Status</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Status</th>
+    </tr>
+
+
+@foreach (var item in Model.Where(x => x.Isread == true).ToList())
+{
+    <tr>
+        <td><a class="btn btn-outline-@(item.Isread == false ? "danger":"success")">@(item.Isread == false ? "Unread":"Read")</a></td>
+        <td>@item.Name</td>
+        <td>@item.Email</td>
+        <td>@item.Subject</td>
+        <td>@item.MessageContent</td>
+        <td><a class="btn btn-outline-danger" href="/Messages/DeleteMessage/@item.MessageId">Delete</a></td>
+        <td><a class="btn btn-outline-info" href="/Messages/UpdateMessage/@item.MessageId">Update</a></td>
+        <td><a href="/Messages/Isread/@item.MessageId" class="btn btn-outline-@(item.Isread == false ? "danger":"success")">@(item.Isread == false ? "Mark as read ?" : "Mark as unread ?")</a></td>
+
+
+    </tr>
+
+
+}
+
+
+</table>
+

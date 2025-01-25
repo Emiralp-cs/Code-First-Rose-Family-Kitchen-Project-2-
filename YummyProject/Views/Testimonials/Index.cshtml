@@ -1,0 +1,49 @@
+﻿@model List<YummyProject.Models.Testimonial>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<h3 style="text-align:center">Testimonials Page</h3>
+
+<hr />
+<table class="table table-bordered table-hover">
+
+    <tr>
+        <th>Image</th>
+        <th>Name Surname</th>
+        <th>Title</th>
+        <th>Comment</th>
+        <th>Out of 5</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img src="@item.ImageUrl" style="width:120px;height:140px" /></td>
+            <td>@item.NameSurname</td>
+            <td>@item.Title</td>
+            <td>@item.Comment</td>
+            <td>@item.Rating</td>
+            <td><a href="/Testimonials/DeleteTestimonials/@item.TestimonialId" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="/Testimonials/UpdateTestimonials/@item.TestimonialId" class="btn btn-outline-info">Update</a></td>
+
+        </tr>
+    }
+
+
+</table>
+
+
+<div style="text-align:center">
+
+    <a  class="btn btn-outline-success" href="/Testimonials/AddTestimonials">Add New Testimonial</a>
+</div>
+<br />

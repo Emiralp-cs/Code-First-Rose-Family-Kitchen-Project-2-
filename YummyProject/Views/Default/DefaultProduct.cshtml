@@ -1,0 +1,111 @@
+﻿@model List<YummyProject.Models.Category>
+
+@{
+    int count = 0;
+    int count1 = 0;
+}
+<style>
+    body {
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        background-color: transparent;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        width: calc(33.33% - 20px);
+        align-items: center;
+        text-align: center;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .ingredients {
+        word-break: break-word;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .price {
+        margin-top: 10px;
+    }
+</style>
+
+<section id="menu" class="menu section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>OUR MENU</h2>
+        <p><span>CHECK OUR</span> <span class="description-title">ROSE MENU</span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+            @foreach (var item in Model)
+            {
+                count++;
+                <li class="nav-item">
+                    <a class="nav-link @(count == 1 ? "active show":"")" data-bs-toggle="tab" data-bs-target="#menu-@item.CategoryId">
+                        <h4>@item.CategoryName</h4>
+                    </a>
+                </li>
+
+            }
+
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+            @foreach (var category in Model)
+            {
+
+                count1++;
+                <div class="tab-pane fade @(count1 == 1 ? "active show":"")" id="menu-@category.CategoryId">
+
+                    <div class="tab-header text-center">
+                        <p>Menu</p>
+                        <h3>@category.CategoryName</h3>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            @foreach (var product in category.Products)
+                            {
+                                <div class="menu-item">
+                                    <a href="@product.ImageUrl" class="glightbox">
+                                        <img style=" max-width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px; border-radius: 16px" src="@product.ImageUrl" alt="@product.ProductName">
+                                    </a>
+                                    <h4>@product.ProductName</h4>
+                                    <p class="ingredients">@product.Ingredients</p>
+                                    <p class="price">@product.Price ₺</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End Starter Menu Content -->
+
+            }
+        </div>
+
+    </div>
+
+</section>

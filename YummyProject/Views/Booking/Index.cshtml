@@ -1,0 +1,138 @@
+﻿@model List<YummyProject.Models.Booking>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+
+}
+<br />
+<h3 style="text-align:center">Bookings Page</h3>
+
+<hr />
+
+<h4>Awaiting Confirmation Reservations</h4>
+
+
+<table class="table table-bordered table-hover">
+
+    <tr>
+        <th>Confirmation Status</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Phone Number</th>
+        <th>Reservation Date</th>
+        <th>Number of People</th>
+        <th>Message Content</th>
+        <th>Confirm</th>
+        <th>Reject</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+    @foreach (var item in Model.Where(x => x.IsApproved == null).ToList())
+    {
+        <tr>
+            <td><a class="btn btn-outline-@(item.IsApproved == null ? "primary":"success")">@("Awaiting")</a></td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.BookingDate.ToString("d")</td>
+            <td>@item.PersonCount</td>
+            <td>@item.MessageContent</td>
+            <td>
+                <a href="/Booking/Confirm/@item.BookingId" class="btn btn-outline-success">Confirm</a>
+
+            </td>
+            <td>
+                <a href="/Booking/Decline/@item.BookingId" class="btn btn-outline-warning">Decline</a>
+
+            </td>
+
+            <td><a href="/Booking/DeleteBookings/@item.BookingId" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="/Booking/UpdateBookings/@item.BookingId" class="btn btn-outline-info">Update</a></td>
+        </tr>
+    }
+
+
+
+
+</table>
+<hr />
+<h4>Confirmed Reservations</h4>
+
+
+<table class="table table-bordered table-hover">
+
+    <tr>
+        <th>Confirmation Status</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Phone Number</th>
+        <th>Reservation Date</th>
+        <th>Number of People</th>
+        <th>Message Content</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+    @foreach (var item in Model.Where(x => x.IsApproved == true).ToList())
+    {
+        <tr>
+            <td><a class="btn btn-outline-@(item.IsApproved == false ? "danger":"success")">@(item.IsApproved == false ? "Declined":"Confirmed")</a></td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.BookingDate.ToString("d")</td>
+            <td>@item.PersonCount</td>
+            <td>@item.MessageContent</td>
+            <td><a href="/Booking/DeleteBookings/@item.BookingId" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="/Booking/UpdateBookings/@item.BookingId" class="btn btn-outline-info">Update</a></td>
+
+
+        </tr>
+    }
+</table>
+
+
+
+<hr />
+<h4>Declined Reservations</h4>
+
+
+<table class="table table-bordered table-hover">
+
+    <tr>
+        <th>Confirmation Status</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Phone Number</th>
+        <th>Reservation Date</th>
+        <th>Number of People</th>
+        <th>Message Content</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+    @foreach (var item in Model.Where(x => x.IsApproved == false).ToList())
+    {
+        <tr>
+            <td><a class="btn btn-outline-@(item.IsApproved == false ? "danger":"success")">@(item.IsApproved == false ? "Declined":"Confirmed")</a></td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.BookingDate.ToString("d")</td>
+            <td>@item.PersonCount</td>
+            <td>@item.MessageContent</td>
+            <td><a href="/Booking/DeleteBookings/@item.BookingId" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="/Booking/UpdateBookings/@item.BookingId" class="btn btn-outline-info">Update</a></td>
+
+
+        </tr>
+    }
+</table>
+<div style="text-align:center">
+    <a class="btn btn-outline-success" href="/Booking/AddBooking" style="text-align:center">Add New Reservation</a>
+</div>
+
+
+
+

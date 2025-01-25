@@ -1,0 +1,48 @@
+﻿@model YummyProject.Models.ConInfo
+
+@{
+    ViewBag.Title = "EditContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<h3 style="text-align:center">Contact Edit Page</h3>
+<hr />
+<form method="post">
+
+    <label>Address</label>
+    <br />
+    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Address, "", new { @class = "text-danger" })
+
+    <br />
+
+    <label>E-Mail</label>
+    <br />
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+
+    <br />
+
+    <label>Phone Number</label>
+    <br />
+    @Html.TextBoxFor(x => x.PhoneNumber, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "text-danger" })
+
+    <br />
+
+    <label>Opening Hours</label>
+    <br />
+    @Html.TextBoxFor(x => x.OpeningHours, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OpeningHours, "", new { @class = "text-danger" })
+    <br />
+
+
+    <div  style="text-align:center">
+        <button class="btn btn-outline-info">Edit</button>
+    </div>
+    <br />
+
+
+</form>
+

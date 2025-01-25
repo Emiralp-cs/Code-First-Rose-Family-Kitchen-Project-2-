@@ -1,0 +1,25 @@
+﻿@model YummyProject.Models.Category
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<h3 style="text-align:center">CategoriesUpdate</h3>
+<hr />
+<form method="post">
+
+    @Html.HiddenFor(x => x.CategoryId)
+
+    <label>Category Name</label>
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryName, "", new { @class = "text-danger" })
+
+    <br />
+    <div style="text-align:center">
+        <button class="btn btn-outline-secondary">Update</button>
+    </div>
+
+</form>
+

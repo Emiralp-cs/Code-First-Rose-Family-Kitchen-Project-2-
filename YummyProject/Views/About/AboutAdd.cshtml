@@ -1,0 +1,71 @@
+﻿@model YummyProject.Models.About
+
+
+@{
+    ViewBag.Title = "AboutAdd";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Hakkımızda Ekleme Sayfası</h2>
+
+<form method="post" enctype="multipart/form-data">
+
+    <label>About Image</label>
+    <br />
+    <input type="file" name="ImageFile" />
+
+    <hr />
+
+    <label>Video Image</label>
+
+    <input type="file" name="ImageFile2" />
+
+    <hr />
+
+    <br />
+
+    <label>1.Item</label>
+    @Html.TextBoxFor(x=> x.Item1, new {@class = "form-control"} )
+    @Html.ValidationMessageFor(x => x.Item1)
+
+
+    <hr />
+    <label>2.Item</label>
+    <input type="text" class="form-control"  name="Item2" />
+    @Html.ValidationMessageFor(x => x.Item2)
+
+    <hr />
+    <label>3.Item</label>
+    <input type="text" class="form-control"  name="Item3" />
+    @Html.ValidationMessageFor(x => x.Item3)
+
+    <hr />
+    <label>Description</label>
+    @Html.TextAreaFor(x => x.Description, 5, 1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Description)
+
+
+
+    <hr />
+
+    <label>Video Url</label>
+    <input type="text" class="form-control"  name="VideoUrl" />
+    @Html.ValidationMessageFor(x => x.VideoUrl)
+
+
+    <hr />
+
+
+
+    <label>Phone Number</label>
+    <input type="tel" class="form-control" name="PhoneNumber" />
+    @Html.ValidationMessageFor(x => x.PhoneNumber)
+
+
+    <br />
+    
+    <button class="btn btn-success">Add</button>
+
+
+
+</form>

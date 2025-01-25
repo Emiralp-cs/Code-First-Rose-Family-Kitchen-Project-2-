@@ -1,0 +1,42 @@
+﻿@model YummyProject.Models.Admin
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<br />
+<h3 style="text-align:center">Admin Update Page</h3>
+<hr />
+<form method="post" enctype="multipart/form-data">
+    <img style="height:110px;width:120px" src="@Model.ImageUrl" />
+    @Html.HiddenFor(x => x.AdminId)
+    <label>Upload Image</label>
+
+    <input type="file" name="ImageFile" />
+    <br />
+    <br />
+    <label>Name and Surname</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+
+    <br />
+
+    <label>Usarname</label>
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+
+    <br />
+
+    <label>Password</label>
+    <input type="text" class="form-control" placeholder="Enter Password" name="Password" />
+    <br />
+
+    <div style="text-align:center">
+        <div class="@TempData["MessageColor"]">@TempData["ResultMessage"]</div>
+        <button class="btn btn-outline-secondary">Upload Admin Information</button>
+
+    </div>
+
+
+</form>
+
+

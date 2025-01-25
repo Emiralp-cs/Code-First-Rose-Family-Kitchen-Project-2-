@@ -1,0 +1,46 @@
+﻿@model YummyProject.Models.Event
+
+
+@{
+    ViewBag.Title = "UpdateEvent";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<h3 style="text-align:center">Update Event Page</h3>
+
+<hr />
+
+
+<form method="post" enctype="multipart/form-data">
+
+    @Html.HiddenFor(x => x.EventId)
+
+
+    <label>Image</label>
+    <input type="file" name="ImageFile" />
+    <br />
+    <hr />
+
+    <label>Title</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+
+    <br />
+    <hr />
+
+    <label>Description</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+
+    <br />
+    <hr />
+    <label>Price</label>
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+
+    <br />
+    <hr />
+    <div style="text-align:center">
+        <button class="btn btn-outline-success">Update</button>
+    </div>
+    <br />
+</form>
+

@@ -1,0 +1,43 @@
+﻿@model YummyProject.Models.Service
+
+@{
+    ViewBag.Title = "UpdateServices";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<h3 style="text-align:center">Update Services Page</h3>
+<hr />
+
+<form method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.ServiceId)
+    <label>Update Image</label>
+    <br />
+    <input type="file" name="ImageFile" />
+
+
+    <br />
+
+    <label>Title</label>
+    <br />
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+
+    <br />
+
+    <label>Description</label>
+    @Html.TextAreaFor(x => x.Description, 5, 1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+
+    <br />
+
+
+    <div style="text-align:center">
+        <button class="btn btn-outline-info">Update</button>
+    </div>
+    <br />
+
+
+
+</form>
+

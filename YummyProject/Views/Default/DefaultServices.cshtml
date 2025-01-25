@@ -1,0 +1,45 @@
+﻿@model List<YummyProject.Models.Service>
+
+
+
+<section id="why-us" class="why-us section light-background">
+
+    <div class="container">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-box">
+                    <h3>Why Choose Rose Family Kitchen</h3>
+                    <p>
+                        At Rose Family Kitchen, we are passionate about serving high-quality food that tastes great. Our menu features a variety of dishes made with fresh, locally sourced ingredients. We focus on providing a satisfying and enjoyable dining experience.
+                    </p>
+                    <br />
+                    <div class="text-center">
+                        <a href="#" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div><!-- End Why Box -->
+
+            <div class="col-lg-8 d-flex">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-xl-4 d-flex flex-column align-items-center justify-content-center">
+                            <div class="icon-box text-center">
+                                <img style="width:70px; height:70px; border-radius:15px; object-fit:cover; margin-bottom: 10px;" src="@item.Icon" alt="@item.Title" />
+                                <h4>@item.Title</h4>
+                                <p>@item.Description</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+

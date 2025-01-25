@@ -1,0 +1,70 @@
+﻿@model YummyProject.Models.Booking
+
+
+@{
+    ViewBag.Title = "UpdateBookings";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+
+    var a = Html.HiddenFor(x => x.IsApproved);
+}
+<br />
+<h3 style="text-align:center">Reservation Update Page</h3>
+
+
+<hr />
+
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.BookingId, new { @class = "form-control" })
+
+
+    <label>Name</label>
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+
+    <br />
+
+
+    <label>E-Mail</label>
+    <br />
+    <input type="email" class="form-control" name="Email" value="@Model.Email" required />
+    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+
+
+    <br />
+
+    <label>Phone Number</label>
+    <br />
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "text-danger" })
+
+    <br />
+
+    <label>Reservation Date</label>
+    <br />
+    <input type="date" class="form-control" name="BookingDate" value="@TempData["Date"]" min="2025-01-01" max="2025-12-31" />
+    @Html.ValidationMessageFor(x => x.BookingDate, "", new { @class = "text-danger" })
+
+
+    <br />
+
+    <label>Person Count</label>
+    <br />
+    <input type="number" class="form-control" name="PersonCount" id="people" value="@Model.PersonCount" required="">
+    @Html.ValidationMessageFor(x => x.PersonCount, "", new { @class = "text-danger" })
+
+    <br />
+
+    <label>Description</label>
+    @Html.TextAreaFor(x => x.MessageContent, 5, 1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MessageContent, "", new { @class = "text-danger" })
+
+    <br />
+    <div style="text-align:center">
+        <button class="btn btn-outline-success">Update</button>
+    </div>
+    <br />
+</form>
+

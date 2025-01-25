@@ -1,0 +1,70 @@
+﻿@model YummyProject.Models.Booking
+
+
+@{
+    ViewBag.Title = "AddBooking";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<br />
+<h3 style="text-align:center">Add Reservation Page</h3>
+
+
+<hr />
+
+
+<form method="post">
+
+
+
+    <label>Name</label>
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+    <br />
+
+
+    <label>E-Mail</label>
+    <br />
+    <input type="email" class="form-control" name="Email" required />
+    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+
+
+
+    <br />
+
+    <label>Phone Number</label>
+    <br />
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "text-danger" })
+
+
+    <br />
+
+    <label>Booking Date</label>
+    <br />
+    <input type="date" class="form-control" name="BookingDate" value="2025-01-01" min="2025-01-01" max="2025-12-31" required />
+
+
+
+    <br />
+
+    <label>Person Count</label>
+    <br />
+    <input type="number" class="form-control" name="PersonCount" id="people" required="">
+    @Html.ValidationMessageFor(x => x.PersonCount, "", new { @class = "text-danger" })
+
+    <br />
+
+    <label>Description</label>
+    @Html.TextAreaFor(x => x.MessageContent, 5, 1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MessageContent, "", new { @class = "text-danger" })
+
+    <br />
+
+    <div style="text-align:center">
+        <button class="btn btn-outline-success">Add</button>
+    </div>
+    <br />
+</form>
+
+

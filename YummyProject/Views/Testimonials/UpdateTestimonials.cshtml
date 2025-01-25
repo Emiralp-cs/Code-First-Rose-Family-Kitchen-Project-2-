@@ -1,0 +1,41 @@
+﻿@model YummyProject.Models.Testimonial
+
+@{
+    ViewBag.Title = "UpdateTestimonials";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<h3 style="text-align:center">Update Reference Page</h3>
+
+<hr />
+<form method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.TestimonialId)
+    <label>Upload Image</label>
+    <input type="file" name="ImageFile" />
+    <br />
+    <hr />
+
+    <label>Name Surname</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    <hr />
+
+    <label>Title</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <hr />
+
+    <label>Comment</label>
+    @Html.TextAreaFor(x => x.Comment, 5, 1, new { @class = "form-control" })
+    <br />
+    <hr />
+
+    <label>Rate out of 5</label>
+    @Html.DropDownListFor(x => x.Rating, (List<SelectListItem>)ViewBag.Comment_Stars, new { @class = "form-control" })
+    <br />
+    <hr />
+
+    <button class="btn btn-outline-success">Update</button>
+
+</form>

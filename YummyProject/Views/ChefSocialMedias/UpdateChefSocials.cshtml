@@ -1,0 +1,33 @@
+﻿@model YummyProject.Models.ChefSocial
+@{
+    ViewBag.Title = "UpdateChefSocials";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<br />
+<h3 style="text-align:center">Chef Social Media Update Page</h3>
+
+<hr />
+<form method="post" enctype="multipart/form-data" class="form-control">
+    @Html.HiddenFor(x => x.ChefSocialId)
+    @Html.HiddenFor(x => x.ChefId)
+
+   
+
+    <br />
+
+    <label>Select Social Media</label>
+    @Html.DropDownListFor(x => x.Icon, (List<SelectListItem>)ViewBag.Logolar, new { @class = "form-control" })
+    <br><br>
+
+
+    <br />
+    <label>Url</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <br />
+
+    <div style="text-align:center">
+        <button class="btn btn-outline-success">Save Changes</button>
+    </div>
+
+</form>
+

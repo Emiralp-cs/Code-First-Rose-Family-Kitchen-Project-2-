@@ -1,0 +1,43 @@
+﻿@model List<YummyProject.Models.ConInfo>
+
+@{
+    YummyProject.Context.YummyContext context = new YummyProject.Context.YummyContext();
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<h3 style="text-align:center">Contact Page</h3>
+<hr />
+<table class="table table-bordered table-hover">
+
+    <tr>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Opening Hours</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Address</td>
+            <td>@item.Email</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.OpeningHours</td>
+        </tr>
+    }
+
+
+
+</table>
+
+@foreach (var item in Model)
+{
+    <div style="text-align:center">
+        <a href="/ContactInfo/EditContact/@item.Id" class="btn btn-outline-info">Edit</a>
+
+    </div>
+}
+
+

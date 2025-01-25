@@ -1,0 +1,48 @@
+﻿@model List<YummyProject.Models.Chef>
+
+
+@{
+    YummyProject.Context.YummyContext context = new YummyProject.Context.YummyContext();
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2 style="text-align:center">Chefs</h2>
+<hr />
+<table class="table table-bordered table-hover">
+
+    <tr>
+        <th>#</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ChefId</td>
+            <td><img src="@item.ImageUrl" style="width:80px;height:70px" /></td>
+            <td>@item.ChefName</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td><a href="/Chef/Delete/@item.ChefId" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="/Chef/Update/@item.ChefId" class="btn btn-outline-info">Update</a></td>
+
+
+        </tr>
+    }
+
+
+
+</table>
+
+<hr />
+<div style="text-align:center">
+    <div class="text-danger">@TempData["Error"]</div>
+    <a href="/Chef/AddChef" class="btn btn-outline-dark">Add New Chef</a>
+</div>

@@ -1,0 +1,79 @@
+﻿@model YummyProject.Models.About
+
+
+@{
+    ViewBag.Title = "AboutUpdate";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<br />
+<h3 style="text-align:center">About Update Page</h3>
+<hr />
+
+<form method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.AboutId)
+
+
+    <label>About Image</label>
+
+    <br />
+
+    <input type="file" name="ImageFile" value="@Model.ImageUrl" />
+
+
+    <hr />
+    <label>Video Image</label>
+
+
+    <br />
+    <input type="file" name="ImageFile2" value="@Model.ImageUrl2" />
+    <br />
+    <hr />
+
+    <label>1.Item</label>
+    <input type="text" class="form-control" value="@Model.Item1" name="Item1" />
+    @Html.ValidationMessageFor(x => x.Item1)
+
+
+
+    <hr />
+    <label>2.Item</label>
+    <input type="text" class="form-control" value="@Model.Item2" name="Item2" />
+    @Html.ValidationMessageFor(x => x.Item2)
+
+    <hr />
+    <label>3.Item</label>
+    <input type="text" class="form-control" value="@Model.Item3" name="Item3" />
+    @Html.ValidationMessageFor(x => x.Item3)
+
+    <hr />
+    <label>Description</label>
+    @Html.TextAreaFor(x => x.Description, 5, 1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Description)
+
+
+
+    <hr />
+
+    <label>Video Url</label>
+    <input type="text" class="form-control" value="@Model.VideoUrl" name="VideoUrl" />
+    @Html.ValidationMessageFor(x => x.VideoUrl)
+
+
+    <hr />
+
+
+
+    <label>Phone Number</label>
+    <input type="tel" class="form-control" value="@Model.PhoneNumber" name="PhoneNumber" />
+    @Html.ValidationMessageFor(x => x.PhoneNumber)
+
+
+    <br />
+    <div style="text-align:center">
+    <button class="btn btn-outline-success">Save Changes</button>
+    </div>
+
+    <br />
+
+</form>
+

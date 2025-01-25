@@ -1,0 +1,53 @@
+﻿@model YummyProject.Models.Product
+
+@{
+    ViewBag.Title = "UpdateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<br />
+<h3 style="text-align:center">Update Product Page</h3>
+
+<br />
+
+
+<form method="post" enctype="multipart/form-data" class="form-control">
+    @Html.HiddenFor(x => x.ProductId)
+    <br />
+
+    <label>Upload Image</label>
+    <input type="file" name="ImageFile" />
+
+    <br />
+
+    <label>Product Name</label>
+    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+
+    <br />
+
+    <label>Ingredients</label>
+    @Html.TextAreaFor(x => x.Ingredients, 5, 1, new { @class = "form-control" })
+
+    <br />
+
+    <label>Price</label>
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+
+    <label>Category</label>
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.kategoriler, new { @class = "form-control" })
+
+    <br />
+
+    <div style="text-align:center">
+        <button class="btn btn-outline-success">Update</button>
+
+    </div>
+
+    <br />
+
+
+
+</form>
+
