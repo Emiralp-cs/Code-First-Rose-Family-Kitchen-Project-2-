@@ -42,6 +42,7 @@ CRUD management of all restaurant content:
 * Chefs
 * ChefSocials
 * Contact Infoes
+
 * Events
 * Messages
 * Services
@@ -52,5 +53,5 @@ CRUD management of all restaurant content:
 Also:
 * Bookings: Admin can approve/reject reservation requests.
 * Messages: Admin can mark messages as read/unread.
-
+![oldu galiba](https://github.com/user-attachments/assets/797cb727-8319-41b4-9243-565c75bdfac5)
 
