@@ -32,4 +32,24 @@ Customers can perform the following actions:
 * Menu and products: Shows our menu.
 * Testimonials: Presents customer feedback.
 
+##__Admin Side__
+CRUD management of all restaurant content:
+
+* About
+* Features
+* Bookings
+* Categories
+* Chefs
+* ChefSocials
+* Contact Infoes
+* Events
+* Messages
+* Services
+* Photo Gallery
+* Menu and products
+* Testimonials
+Also:
+* Bookings: Admin can approve/reject reservation requests.
+* Messages: Admin can mark messages as read/unread.
+
 
