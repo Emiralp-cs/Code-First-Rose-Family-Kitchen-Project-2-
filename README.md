@@ -48,6 +48,7 @@ CRUD management of all restaurant content:
 * Photo Gallery
 * Menu and products
 * Testimonials
+
 Also:
 * Bookings: Admin can approve/reject reservation requests.
 * Messages: Admin can mark messages as read/unread.
