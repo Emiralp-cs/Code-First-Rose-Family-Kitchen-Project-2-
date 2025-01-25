@@ -2,7 +2,7 @@
 
 __This project is a restaurant website developed using ASP.NET MVC. Customers can view the menu, make online reservations, learn about the restaurant, and send messages through a contact form. The admin panel allows managing the menu, reservations, and restaurant information. The project is developed with a focus on modern web design principles and user experience.__
 
-##__Technologies__
+## __Technologies__
 
 * ASP.NET MVC
 * C#
@@ -14,7 +14,7 @@ __This project is a restaurant website developed using ASP.NET MVC. Customers ca
 * Data Annotations
 * Authorization
 
-##__User Side__
+## __User Side__
 
 Customers can perform the following actions:
 
@@ -32,7 +32,7 @@ Customers can perform the following actions:
 * Menu and products: Shows our menu.
 * Testimonials: Presents customer feedback.
 
-##__Admin Side__
+## __Admin Side__
 CRUD management of all restaurant content:
 
 * About
