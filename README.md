@@ -41,7 +41,6 @@ CRUD management of all restaurant content:
 * Chefs
 * ChefSocials
 * Contact Infoes
-
 * Events
 * Messages
 * Services
