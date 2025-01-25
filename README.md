@@ -20,7 +20,7 @@ Customers can perform the following actions:
 
 * Menu Viewing: View the categorized menu and get detailed information about the dishes.
 * Online Reservation: Make online reservations by selecting the date, time, and number of guests.
-*Restaurant Information: Get information about the restaurant's location, contact information, photos, and other details.
-*Contact: Contact the restaurant through a contact form.
+* Restaurant Information: Get information about the restaurant's location, contact information, photos, and other details.
+* Contact: Contact the restaurant through a contact form.
 
 
