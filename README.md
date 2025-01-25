@@ -6,13 +6,12 @@ __This project is a restaurant website developed using ASP.NET MVC. Customers ca
 
 * ASP.NET MVC
 * C#
-* Entity Framework Core 
+* Entity Framework Core (Code First Approach)
 * HTML, CSS, JavaScript
 * Bootstrap 
 * Database (MSSQL)
-* Code First Approach
 * Data Annotations
-* Authorization
+* Authorization, Session
 
 ## __User Side__
 
@@ -58,6 +57,9 @@ Also:
 
 * __User Side Photos__
 ![deneme2](https://github.com/user-attachments/assets/0b23c258-b9d6-49ca-a891-59272d324e09)
+
+*__Admin Side Photos__
+
 
 
 
